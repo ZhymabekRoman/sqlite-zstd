@@ -9,6 +9,10 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, windows-2019, macos-11]
+    env:
+      CIBW_BEFORE_ALL_LINUX: "curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y && yum install -y openssl-devel"
+      CIBW_BUILD_VERBOSITY: "1" # Make some more noise so that travis doesn't stall
+      CIBW_ENVIRONMENT: 'PATH="$PATH:$HOME/.cargo/bin"'
 
     steps:
       - uses: actions/checkout@v4
