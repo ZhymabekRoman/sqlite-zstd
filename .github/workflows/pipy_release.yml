@@ -1,6 +1,9 @@
-name: Build
+name: Publish to PyPI
 
-on: [push, pull_request]
+on:
+  push:
+    tags:
+     - '*'
 
 jobs:
   build_wheels:
