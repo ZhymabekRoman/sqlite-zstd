@@ -12,6 +12,7 @@ jobs:
     env:
       CIBW_BEFORE_ALL_LINUX: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y"
       CIBW_BUILD_VERBOSITY: "1" # Make some more noise so that travis doesn't stall
+      CIBW_SKIP: cp39-musllinux_i686 cp310-musllinux_i686 cp311-musllinux_i686 cp312-musllinux_i686
       CIBW_ENVIRONMENT: 'PATH="$PATH:$HOME/.cargo/bin"'
 
     steps:
