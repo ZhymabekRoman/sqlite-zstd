@@ -10,7 +10,7 @@ jobs:
       matrix:
         os: [ubuntu-20.04, windows-2019, macos-11]
     env:
-      CIBW_BEFORE_ALL_LINUX: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+      CIBW_BEFORE_ALL_LINUX: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y"
       CIBW_BUILD_VERBOSITY: "1" # Make some more noise so that travis doesn't stall
       CIBW_ENVIRONMENT: 'PATH="$PATH:$HOME/.cargo/bin"'
 
