@@ -59,7 +59,9 @@ jobs:
           python -m pip install setuptools-rust setuptools wheel
           cd python/
           python setup.py sdist
-
+          ls ./ -lh
+          ls ../ -lh
+          
       - uses: actions/upload-artifact@v2
         with:
           path: python/dist/*.tar.gz
