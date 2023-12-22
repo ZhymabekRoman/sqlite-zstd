@@ -11,6 +11,4 @@ setup(
         features=['build_extension'],
         py_limited_api=True,
     )],
-    long_description=long_description,
-    long_description_content_type='text/markdown'
 )
